@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+     <div class="content">
+    <h1 style="text-align: center">Predicting Overall rating</h1>
+
+     <form action="{{ url_for('predict')}}"method="post">
+
+
+        <input type="text" name="ball_control" id="ball_control" placeholder="ball_control">
+            <input type="text" name="gk_diving" id="gk_diving" placeholder="gk_diving">
+            <input type="text" name="gk_positioning" id="gk_positioning" placeholder="gk_positioning">
+            <input type="text" name="heading_accuracy" id="heading_accuracy" placeholder="heading_accuracy">
+            <input type="text" name="player_api_id" id="player_api_id" placeholder="player_api_id">
+            <input type="text" name="player_fifa_api_id" id="player_fifa_api_id" placeholder="player_fifa_api_id">
+            <input type="text" name="potential" id="potential" placeholder="potential">
+            <input type="text" name="reactions" id="reactions" placeholder="reactions">
+            <input type="text" name="standing_tackle" id="standing_tackle" placeholder="standing_tackle" step = "any">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
